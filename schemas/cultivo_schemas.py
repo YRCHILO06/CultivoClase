@@ -9,4 +9,4 @@ class PatientData(BaseModel):
     humidity: float
     ph: float
     rainfall:float
-    label: str
+    
