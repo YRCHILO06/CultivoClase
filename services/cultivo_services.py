@@ -44,9 +44,10 @@ def diabetes_prediction(data: PatientData):
         data.rainfall,
     ]).reshape(1,7)
 
-    prediction = RF_model2.predict(xin)
-
-    predict = RF_model3.predict(xin)
+    if data.model == 0:
+        prediction = RF_model2.predict(xin)
+    else:
+        prediction = RF_model3.predict(xin)
 
     print("prediccion", prediction)
 
