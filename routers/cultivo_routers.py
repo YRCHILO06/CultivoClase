@@ -13,7 +13,7 @@ def read_root():
 
 @router.post("/predict")
 async def patient_predict(data: PatientData):
-    print("patient data ", data.identification_number)
+    print("patient data ", data)
 
 
 
