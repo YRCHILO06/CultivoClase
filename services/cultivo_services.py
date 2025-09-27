@@ -46,8 +46,8 @@ def diabetes_prediction(data: PatientData):
 
     prediction = RF_model2.predict(xin)
 
-    prediction = RF_model3.predict(xin)
-    
+    predict = RF_model3.predict(xin)
+
     print("prediccion", prediction)
 
     return prediction[0]
