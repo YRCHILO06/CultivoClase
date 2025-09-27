@@ -4,6 +4,9 @@ import numpy as np
 from schemas.cultivo_schemas import PatientData
 
 with open('SVMCultivoV01.pkl','rb') as file:
+    SVM_model2 = pickle.load(file)
+
+with open('RFCultivoV01.pkl','rb') as file:
     RF_model2 = pickle.load(file)
 
 
@@ -43,7 +46,10 @@ def diabetes_prediction(data: PatientData):
         data.rainfall,
     ]).reshape(1,7)
 
-    prediction = RF_model2.predict(xin)
+    if data.model == 0:
+        prediction = RF_model2.predict(xin)
+    else:
+        prediction = SVM_model2.predict(xin)
 
     print("prediccion", prediction)
 
